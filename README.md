@@ -1,5 +1,5 @@
 # My homelab server setup (hannah@homelab) 
-Updated: 24-Nov-25 (configuration in progress -------50%------)
+Updated: 24-Nov-25 (configuration in progress — 55%)
 
 A simple and clean homelab running on VirtualBox with Ubuntu Server 24.04.  
 This setup is used to host my self-built applications, learn deployment, and practice server management.
@@ -7,15 +7,12 @@ This setup is used to host my self-built applications, learn deployment, and pra
 ## Overview
 **Virtualization:** VirtualBox  
 **OS:** Ubuntu Server 24.04  
-**Main Purpose:** Host apps, learn deployment, improve DevOps knowledge, build portfolio
+**Main Purpose:** Host apps, learn deployment, build portfolio
 
 ## Host Machine (Laptop)
 CPU: AMD Ryzen 5 3600 (6 cores / 12 threads, up to 4.2 GHz)
 RAM: 16 GB DDR4
-Storage: 512 GB NVMe SSD
-Display: 15.6" FHD (1920x1080)
-Keyboard: RGB Backlit
-OS (Host): Windows / Linux (based on your current setup)
+OS (Host): Windows 11
 
 ## Virtualization
 Virtualizer: VirtualBox
