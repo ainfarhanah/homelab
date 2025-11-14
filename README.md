@@ -11,14 +11,20 @@ This setup is used to host my self-built applications, learn deployment, and pra
 
 ## Host Machine (Laptop)
 CPU: AMD Ryzen 5 3600 (6 cores / 12 threads, up to 4.2 GHz)
+
 RAM: 16 GB DDR4
+
 OS (Host): Windows 11
 
 ## Virtualization
 Virtualizer: VirtualBox
+
 Allocated vCPU: 2–4 cores
+
 Allocated RAM: 4–8 GB
+
 Allocated Storage: 50–100 GB Virtual Disk (VDI)
+
 
 ## Guest VM (Server)
 OS: Ubuntu Server 24.04 LTS
