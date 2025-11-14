@@ -11,7 +11,9 @@ This setup is used to host my self-built applications, learn deployment, and pra
 
 ## Host Machine (Laptop)
 CPU: AMD Ryzen 5 3600 (6 cores / 12 threads, up to 4.2 GHz)
+
 RAM: 16 GB DDR4
+
 OS (Host): Windows 11
 
 ## Virtualization
