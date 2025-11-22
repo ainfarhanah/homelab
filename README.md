@@ -52,7 +52,7 @@ Allocated vCPU: 4cores
 
 Allocated RAM: 8GB
 
-Allocated Storage: 1TB Virtual Disk
+Allocated Storage: 512GB Virtual Disk
 
 
 ## Guest VM (Server)
