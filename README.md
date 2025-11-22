@@ -12,7 +12,7 @@ This setup is used to host my self-built applications, learn deployment, and pra
 ```mermaid
 
 flowchart LR
- subgraph UbuntuVM["Ubuntu Server 24.04.3 LTS<br>4GB RAM • 1TB Storage"]
+ subgraph UbuntuVM["Ubuntu Server 24.04.3 LTS<br>8GB RAM • 512GB Storage"]
         Nginx["Nginx Reverse Proxy<br>(Future Expansion)"]
         Docker["🐳 Docker Containers<br>(Future Expansion)"]
         SystemD["Van Cik Lin App<br>systemd + Gunicorn"]
