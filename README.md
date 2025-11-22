@@ -63,3 +63,6 @@ Services:
   - Flask App (systemd managed) 
   - Docker Engine - future expansion
   - CasaOS for container management
+
+## Future Upgrade
+I plan to upgrade the device from laptop to mini-pc for better performance and I'm gonna explore Proxmox
