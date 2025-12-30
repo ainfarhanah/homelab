@@ -1,14 +1,18 @@
-# My homelab server setup (hannah@homelab) 
-
-A simple and clean homelab running on VirtualBox with Ubuntu Server 24.04.  
-This setup is used to host my self-built applications, learn deployment, and practice server management.
+# Homelab
 
 ## Overview
-**Virtualization:** VirtualBox  
-**OS:** Ubuntu Server 24.04  
-**Main Purpose:** Host apps, learn deployment, build portfolio
+Personal homelab built for learning Linux, virtualization and secure application deployments
 
-## Homelab Architechture Diagram
+## Phase 1: Laptop-based
+A laptop is a good device for me as a beginner to experiment with homelab. It is low-cost and low-risk to experiment with:
+- Linux server
+- Web application deployement
+- Remote access
+- Databases
+
+So I started exploring Linux for hosting my app using this setup. It was also a part of my homelab testing:
+
+### Architecture
 ```mermaid
 
 flowchart LR
@@ -38,14 +42,17 @@ flowchart LR
     ClientDevices --> CloudflareTunnel
 
 ```
-## Host Machine (Laptop)
+### Laptop Specs
+
+Model: Level51 Forge 15R
+
 CPU: AMD Ryzen 5 3600 (6 cores / 12 threads, up to 4.2 GHz)
 
 RAM: 16 GB DDR4
 
 OS (Host): Windows 11
 
-## Virtualization
+### Virtualization
 Virtualizer: VirtualBox
 
 Allocated vCPU: 4cores
@@ -55,14 +62,18 @@ Allocated RAM: 8GB
 Allocated Storage: 512GB Virtual Disk
 
 
-## Guest VM (Server)
+### Guest VM (Server)
 OS: Ubuntu Server 24.04 LTS
 Services:
-  - MySQL Database Server
-  - Nginx Reverse Proxy - future expansion
-  - Flask App (systemd managed) 
-  - Docker Engine - future expansion
-  - CasaOS for container management
+- SSH for server remote access
+- Flask app for testing web application
+- Gunicorn - WSGI server for Python web apps
+- MYSQL - database backend
+- Cloudflared Tunnel for secure remote access without port forwarding
+- Custom domain (Hostinger). I used the cheapest one that connected via Cloudflared Tunnel.
+- CasaOS used to easily manage files and transfer my Flask app into the server
 
-## Future Upgrade
-I plan to upgrade the device from laptop to mini-pc for better performance and I'm gonna explore Proxmox
+## Phase 2: Homelab Upgrade with Mini PC
+I upgraded my homelab from a laptop to a Lenovo ThinkCentre M900 Tiny with Proxmox installed.
+
+Currently in progress...
