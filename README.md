@@ -76,4 +76,11 @@ Services:
 ## Phase 2: Homelab Upgrade with Mini PC
 I upgraded my homelab from a laptop to a Lenovo ThinkCentre M900 Tiny with Proxmox installed.
 
+### Specs
+- Mini pc: Lenovo ThinkCentre Tiny M900
+- Storage: 512GB
+- Memory: 8GB
+- Processor: Intel i5-6500T (4 cores, 4 threads)
+
+
 Currently in progress...
