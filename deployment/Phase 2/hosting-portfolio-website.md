@@ -182,3 +182,61 @@ systemctl status cloudflared
 ![alt text](../../images/image-5.png)
 
 ![alt text](../../images/image-4.png)
+
+### Solved an issue regarding JS/SPA
+
+I have an issue regarding Javascript/SPA (Single Page Application). My web routing is handled by Javascript (client-side) not by nginx. And it is served as static files.
+
+When I click Posts → JS handles the route (/posts)
+
+It directly enters /posts in browser → nginx looks for a real folder or file called /posts → not found → 404
+
+So I did a few things to solve this problem:
+
+
+#### Edit nginx site config
+
+```bash
+sudo nano /etc/nginx/sites-available/ainfarhanah.com
+```
+
+```nginx
+server {
+    listen 80;
+    server_name ainfarhanah.com www.ainfarhanah.com;
+
+    root /var/www/portfolio;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+```
+Disable portfolio because I have enabled two site:
+1. Portfolio
+2. ainfarhanah.com
+
+So, I should disable or remove portfolio
+
+```bash
+sudo rm /etc/nginx/sites-enabled/portfolio
+```
+Then, reload
+
+```bash
+sudo nginx -t
+sudo systemctl reload nginx
+```
+Verify the server
+```bash
+sudo nginx -T | grep server_name -n
+```
+It should be:
+
+![alt text](../../images/image-6.png)
+
+Test the web after fix
+
+![alt text](../../images/image-7.png)
