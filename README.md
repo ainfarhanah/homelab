@@ -97,4 +97,11 @@ I upgraded my homelab from a laptop to a Lenovo ThinkCentre M900 Tiny with Proxm
 - Secure exposure of services without port forwarding
 - VM resource allocation and performance considerations
 
+## Roadmap
 
+- [x] Build DIY rack-mounted setup
+- [ ] Add managed switch and VLAN segmentation
+- [ ] Patch panel installation
+- [ ] Structured cable management
+- [ ] Docker containerization
+- [ ] Monitoring stack (Zabbix / Grafana)
