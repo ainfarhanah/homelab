@@ -82,5 +82,19 @@ I upgraded my homelab from a laptop to a Lenovo ThinkCentre M900 Tiny with Proxm
 - Memory: 8GB
 - Processor: Intel i5-6500T (4 cores, 4 threads)
 
+## What This Homelab Demonstrates
+- Linux server administration
+- Virtualization using VirtualBox
+- Secure remote access via Cloudflare Tunnel
+- Web application deployment (Flask + Gunicorn)
+- Reverse proxy architecture (Nginx)
+- Database hosting (MySQL)
 
-Currently in progress...
+## What I Have Learned From This Homelab
+- Understanding reverse proxy architecture
+- Managing Linux services using systemd
+- Debugging deployment issues
+- Secure exposure of services without port forwarding
+- VM resource allocation and performance considerations
+
+
