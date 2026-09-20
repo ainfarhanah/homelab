@@ -79,7 +79,7 @@ I upgraded my homelab from a laptop to a Lenovo ThinkCentre M900 Tiny with Proxm
 ### Specs
 - Mini pc: Lenovo ThinkCentre Tiny M900
 - Storage: 512GB
-- Memory: 8GB
+- Memory: 16GB
 - Processor: Intel i5-6500T (4 cores, 4 threads)
 
 ## What This Homelab Demonstrates
@@ -105,3 +105,4 @@ I upgraded my homelab from a laptop to a Lenovo ThinkCentre M900 Tiny with Proxm
 - [ ] Structured cable management
 - [ ] Docker containerization
 - [ ] Monitoring stack (Zabbix / Grafana)
+
