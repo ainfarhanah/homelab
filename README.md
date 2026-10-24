@@ -1,108 +1,75 @@
-# Homelab
+# homelab
 
-## Overview
-Personal homelab built for learning Linux, virtualization and secure application deployments
+my homelab started in Nov'25 with an Ubuntu Server VM running on my laptop. it has nice grown into a Proxmox setup for hosting applications, experiments with services, and learning server administration and networking.
 
-## Phase 1: Laptop-based
-A laptop is a good device for me as a beginner to experiment with homelab. It is low-cost and low-risk to experiment with:
-- Linux server
-- Web application deployement
-- Remote access
-- Databases
+this repo documents my progress, configurations, troubleshooting, and lessons learned.
 
-So I started exploring Linux for hosting my app using this setup. It was also a part of my homelab testing:
+## purpose
 
-### Architecture
-```mermaid
+- host my Van Cik Lin invoicing system and portfolio website.
+- learn Linux administration, virtualization and container management.
+- practice networking, alongside my CCNA studies and preparation.
+- experiments with monitoring, local AI and game server.
 
-flowchart LR
- subgraph UbuntuVM["Ubuntu Server 24.04.3 LTS<br>8GB RAM • 512GB Storage"]
-        Nginx["Nginx Reverse Proxy<br>(Future Expansion)"]
-        Docker["🐳 Docker Containers<br>(Future Expansion)"]
-        SystemD["Van Cik Lin App<br>systemd + Gunicorn"]
-        CasaOS["📦 CasaOS"]
-        MySQL[("MySQL DB")]
-        SSH["SSH Access"]
-        CloudflareTunnel["☁️ Cloudflare Tunnel"]
-  end
- subgraph PhysicalHost["Aftershock Forge 15R<br>16GB RAM • 512GB SSD"]
-        VirtualBox["VirtualBox"]
-        UbuntuVM
-  end
- subgraph ClientDevices["Clients"]
-        LaptopClient["💻 Laptop"]
-        DesktopClient["🖥️ Desktop"]
-        PhoneClient["📱 Phone"]
-  end
-    Internet(("🌐 Internet")) --> Router["Fiber Home<br>HG6240A"]
-    Router --> WifiMesh["Maxis Wi-fi CERTIFIED EasyMesh"]
-    WifiMesh --> PhysicalHost
-    WifiMesh --> ClientDevices
-    VirtualBox --> UbuntuVM
-    ClientDevices --> CloudflareTunnel
+## hardware
+| device | specification | role |
+|--------|---------------|------|
+|Aftershock/Level51 Forge 15R | Ryzen 5 3600. 16GB RAM, 512 GB SSD | Original VirtualBox host|
+|Lenovo ThinkCentre M900 Tiny| Intel i-6500T, 16GB RAM, 256GB + 512GB| Proxmox host|
 
-```
-### Laptop Specs
+## homelab journey
+### phase 1 - starting with a laptop
+i began by installing ubuntu server 24.04.3 LTS in VirtualBox on my laptop.
 
-Model: Level51 Forge 15R
+- adjusted VM cpu allocation to improve performance.
+- purchased a domain for server testing and DNS configuration.
+- configured SSH access and UFW.
+- set up Cloudflare Tunnel and public hostname for SSH.
+- installed Docker, Docker compose and CasaOS.
+- installed MySQL and prepared Python environment for Van Cik Lin.
+- fixed an application PDF generation issue involving code and database queries.
 
-CPU: AMD Ryzen 5 3600 (6 cores / 12 threads, up to 4.2 GHz)
+### phase 2 - moving to Proxmox
+i moved to a Lenovo ThinkCentre M900 to build a dedicated homelab server.
+- migrated to Proxmox.
+- configured static ip addresses for node and LXC containers.
+- enabled firewall and resolved rules blocked application access.
+- recorded an internet outage caused by a fiber cut.
 
-RAM: 16 GB DDR4
+### phase 3 - improving the setup
+i focused on hardware improvements, service liability, service liability, and networking skills.
+- upgrade the mini pc to 16gb ram.
+- build a custom rack and assembled an arylic mini pc mount
+- continued updating the python application
+- created an offline page using Cloudflare Pages
+- configured services to start automatically and tested them after shutdown.
+- completed five days of CCNA training.
 
-OS (Host): Windows 11
+## hosted services and experiments
+| services | purpose |
+|----------|---------|
+| vanciklin|host the invoicing and payment tracking for my mother's school transport service|
+|portfolio website| host my personal portfolio using Nginx|
+|MySQL| provide a local database for van cik lin|
+|cloudflare tunnel|provide remote access to selected services|
+|AI server| experiments with self-hosted AI model using ollama|
+|Better Minecraft 5| hosted a modded Minecraft server for personal gaming|
 
-### Virtualization
-Virtualizer: VirtualBox
+the AI and minecraft servers are later additions and are not included in my homelab progress log.
 
-Allocated vCPU: 4cores
+## repository content
+- documentation: setup guides, progress logs, and troubleshooting notes.
+- configurations: sanitized services configurations files.
+- scripts: reviewed automation and maintenance scripts.
+- assets: screenshots, hardware photos, and architecture diagram.
 
-Allocated RAM: 8GB
+## next steps
+- [ ] document backup and recovery procedures
+- [ ] routing, switching and vlan practices
+- [ ] configure monitoring page
 
-Allocated Storage: 512GB Virtual Disk
+## lesson learned
 
+this homelab has helped me to understand how vm resources, permission, firewall rules, and service setup setting affect hosted applications.
 
-### Guest VM (Server)
-OS: Ubuntu Server 24.04 LTS
-Services:
-- SSH for server remote access
-- Flask app for testing web application
-- Gunicorn - WSGI server for Python web apps
-- MYSQL - database backend
-- Cloudflared Tunnel for secure remote access without port forwarding
-- Custom domain (Hostinger). I used the cheapest one that connected via Cloudflared Tunnel.
-- CasaOS used to easily manage files and transfer my Flask app into the server
-
-## Phase 2: Homelab Upgrade with Mini PC
-I upgraded my homelab from a laptop to a Lenovo ThinkCentre M900 Tiny with Proxmox installed.
-
-### Specs
-- Mini pc: Lenovo ThinkCentre Tiny M900
-- Storage: 512GB
-- Memory: 16GB
-- Processor: Intel i5-6500T (4 cores, 4 threads)
-
-## What This Homelab Demonstrates
-- Linux server administration
-- Virtualization using VirtualBox
-- Secure remote access via Cloudflare Tunnel
-- Web application deployment (Flask + Gunicorn)
-- Reverse proxy architecture (Nginx)
-- Database hosting (MySQL)
-
-## What I Have Learned From This Homelab
-- Understanding reverse proxy architecture
-- Managing Linux services using systemd
-- Debugging deployment issues
-- Secure exposure of services without port forwarding
-- VM resource allocation and performance considerations
-
-## Roadmap
-
-- [x] Build DIY rack-mounted setup
-- [ ] Add managed switch and VLAN segmentation
-- [ ] Patch panel installation
-- [ ] Structured cable management
-- [ ] Docker containerization
-- [ ] Monitoring stack (Zabbix / Grafana)
-
+each installation and troubleshooting session is part of the learning process. i document both the working setup and the problems encountered along the way.
